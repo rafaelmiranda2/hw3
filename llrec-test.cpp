@@ -67,6 +67,11 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
+struct RemoveLessThan2 {
+    bool operator()(int x) {
+        return x <= 2; 
+    }
+};
 
 
 
@@ -86,10 +91,15 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
-
-
-
-    
+    //Swap what's commented and what's not to test pivot.
+    //Node* larger = nullptr;
+    //Node* smaller = nullptr;
+    head = llfilter(head, RemoveLessThan2());
+    //llpivot(head, smaller, larger, 3);
+    //print(smaller);
+    //print(larger);*/
+    print(head);
+    dealloc(head);
     return 0;
 
 }
