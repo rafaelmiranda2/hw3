@@ -61,7 +61,9 @@ public:
 
 private:
   /// Add whatever helper functions and data members you need below
-
+  std::vector<T> data;
+  int size_;
+  int height_;
 
 
 
@@ -81,12 +83,12 @@ T const & Heap<T,PComparator>::top() const
     // ================================
     // throw the appropriate exception
     // ================================
-
+    throw std::underflow_error("Heap is empty");
 
   }
   // If we get here we know the heap has at least 1 item
   // Add code to return the top element
-
+  return data.front();
 
 
 }
@@ -101,11 +103,10 @@ void Heap<T,PComparator>::pop()
     // ================================
     // throw the appropriate exception
     // ================================
-
+    throw std::underflow_error("Heap is empty, can't pop!");
 
   }
-
-
+  
 
 }
 
